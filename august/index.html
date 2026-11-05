@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Memo: August | Tal Rosenberg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E2A4A; --navy2:#16385F; --blue:#2F6FB5; --sky:#7FB8EE; --ice:#EAF3FC; --paper:#FBFDFF;
+  --ink:#16202B; --mute:#5B6B7C; --line:#D6E3F0; --good:#2E8B6B; --warn:#C07A1A; --bad:#B8474B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.serif{font-family:"Source Serif 4",Georgia,serif}
+a{color:var(--blue)}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+h2{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--navy);line-height:1.15;margin-top:8px}
+.intro{color:var(--mute);font-size:18px;max-width:720px;margin-top:12px}
+section{padding:80px 0}
+
+/* memo head */
+.memohead{padding:56px 0 64px;border-bottom:1px solid var(--line);background:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--mute);border-bottom:2px solid var(--navy);padding-bottom:14px;margin-bottom:34px}
+.meta b{color:var(--navy);font-weight:600}
+.memohead h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(36px,5.6vw,64px);line-height:1.08;color:var(--navy);font-weight:700;max-width:900px}
+.memohead h1 em{font-style:italic;color:var(--blue)}
+.memohead .sub{font-size:20px;color:var(--mute);max-width:760px;margin-top:20px}
+.stamp{display:inline-flex;align-items:center;gap:10px;margin-top:30px;border:2px solid var(--blue);color:var(--blue);border-radius:8px;padding:8px 16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;transform:rotate(-1.5deg)}
+.links{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.line{border:1px solid var(--line);color:var(--navy);background:#fff}
+
+/* funnel */
+.funnel-sec{background:linear-gradient(180deg,var(--paper),var(--ice))}
+.funnel{margin-top:46px}
+.frow{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:34px;align-items:stretch}
+.slice{position:relative;min-height:150px}
+.slice svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.slice .dots{position:absolute;inset:0;pointer-events:none}
+.dot{position:absolute;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%)}
+.dot.out{background:#B9C6D3;opacity:.55}
+.slice .label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:2;white-space:nowrap}
+.slice .num{font-family:"Source Serif 4",Georgia,serif;font-size:44px;font-weight:700;line-height:1}
+.slice .what{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+.note{padding:22px 0;display:flex;flex-direction:column;justify-content:center;border-top:1px dashed var(--line)}
+.frow:first-child .note{border-top:0}
+.note .step{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.note h3{font-size:20px;color:var(--navy);margin:4px 0 6px}
+.note p{font-size:15.5px;color:var(--mute)}
+.note .why{margin-top:8px;font-size:14.5px;color:var(--navy2);font-style:italic}
+.note .ex{margin-top:10px;display:grid;gap:6px}
+.note .ex div{font-size:14px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 10px;color:var(--ink)}
+.note .ex b{color:var(--bad);font-weight:600}
+
+/* stem + winner */
+.stem{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:34px}
+.stem .pipe{display:flex;flex-direction:column;align-items:center}
+.stem .line{width:4px;height:70px;background:linear-gradient(var(--navy),var(--blue))}
+.winner{position:relative;margin-top:-2px;background:var(--navy);color:#fff;border-radius:999px;padding:16px 30px;text-align:center;box-shadow:0 0 0 10px rgba(127,184,238,.25),0 0 0 22px rgba(127,184,238,.12)}
+.winner .n{font-family:"Source Serif 4",Georgia,serif;font-size:26px;font-weight:700}
+.winner .s{font-size:13px;color:var(--sky);letter-spacing:.05em}
+.rules{display:flex;flex-direction:column;justify-content:center;gap:12px}
+.rulebox{border-left:3px solid var(--sky);padding:6px 0 6px 14px}
+.rulebox b{color:var(--navy)}
+.rulebox p{font-size:14.5px;color:var(--mute)}
+
+/* checks */
+.checks{margin-top:40px;position:relative;max-width:900px}
+.checks:before{content:"";position:absolute;left:23px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.check{position:relative;display:grid;grid-template-columns:48px 1fr;gap:18px;padding:14px 0}
+.ic{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;z-index:1;border:3px solid var(--paper)}
+.ic.ok{background:#E3F3EC;color:var(--good)} .ic.x{background:#F8E5E6;color:var(--bad)} .ic.w{background:#FBF0DF;color:var(--warn)} .ic.i{background:var(--ice);color:var(--blue)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.card .src{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.card h3{font-size:19px;color:var(--navy);margin:3px 0 6px}
+.card p{font-size:15.5px;color:var(--ink)}
+.card table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px}
+.card td{padding:7px 0;border-top:1px solid var(--line)}
+.card td:last-child{text-align:right;white-space:nowrap;color:var(--navy);font-weight:600}
+
+/* decision */
+.decision{background:var(--navy);color:#fff;border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+.decision .big{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(40px,5vw,60px);font-weight:700;line-height:1}
+.decision .k{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:10px}
+.decision p{color:#C9DBEE}
+.decision blockquote{font-family:"Source Serif 4",Georgia,serif;font-size:24px;line-height:1.35;color:#fff;border-left:3px solid var(--sky);padding-left:20px}
+.decision blockquote small{display:block;font-family:Inter,sans-serif;font-size:15px;color:#C9DBEE;margin-top:12px;line-height:1.55}
+
+/* pages */
+.pages{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.pages a{display:block;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(14,42,74,.45),0 0 0 1px var(--line);transition:transform .25s}
+.pages a:nth-child(1){transform:rotate(-1.2deg)} .pages a:nth-child(2){transform:rotate(1deg)}
+.pages a:hover{transform:rotate(0) translateY(-4px)}
+.pages img{display:block;width:100%}
+
+/* limits */
+.limits{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.lim{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.lim h3{font-size:17px;color:var(--navy);margin-bottom:6px}
+.lim p{font-size:15px;color:var(--mute)}
+.end{text-align:center;padding:70px 0;border-top:1px solid var(--line);background:#fff}
+footer{padding:26px 0;text-align:center;font-size:14px;color:var(--mute)}
+
+@media (max-width:820px){
+  .frow,.stem{grid-template-columns:1fr;gap:0}
+  .slice{min-height:120px}
+  .note{border-top:0;padding:12px 0 28px}
+  .stem .rules{margin-top:30px}
+  .decision{grid-template-columns:1fr;padding:30px}
+  .limits{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  section{padding:56px 0}
+  .slice .num{font-size:34px}
+  .pages{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="memohead">
+  <div class="wrap">
+    <div class="meta"><span><b>Investment memo</b></span><span>From: Tal Rosenberg</span><span>November 2026</span><span>Israeli early-stage fintech, public sources only</span></div>
+    <h1>146 fintech companies, one memo. <em>August</em>, $500K at seed.</h1>
+    <p class="sub">I built a screen for early-stage Israeli fintech in the vibe-coding era, when software is becoming a commodity, and ran it across 146 companies with AI agents and an independent audit. The question it asks first: which companies deliver the work itself, rather than a tool that helps people do it. Below is how the pool narrowed, and every check that was run on the company at the end of it.</p>
+    <div class="stamp">Recommendation: meet, then invest on three conditions</div>
+    <div class="links"><a class="btn solid" href="memo.pdf" target="_blank">Read the memo (PDF)</a><a class="btn line" href="#funnel">Follow the funnel</a></div>
+  </div>
+</div>
+
+<section class="funnel-sec" id="funnel">
+  <div class="wrap">
+    <div class="kicker">The screen</div>
+    <h2>From 146 companies to one</h2>
+    <p class="intro">Each layer is a decision. The grey dots are what that layer removed. Cheap tests run on everyone, scoring on the survivors, and judgment and full diligence only at the bottom.</p>
+
+    <div class="funnel" id="f"></div>
+
+    <div class="stem">
+      <div class="pipe"><div class="line"></div><div class="winner"><div class="n">August</div><div class="s">AI agents for bank credit work</div></div></div>
+      <div class="rules">
+        <div class="rulebox"><b>Score the business, not the source.</b><p>A specific company statement can support a 2. A 3 needs outside confirmation. A weak source lowers a separate confidence label, never the score.</p></div>
+        <div class="rulebox"><b>Unknown is not zero.</b><p>Zero means I looked and it is not there. Unknown means it cannot be seen from outside. Merging them would punish companies that simply publish less.</p></div>
+        <div class="rulebox"><b>Audit by rule, not by opinion.</b><p>A second agent checked all 930 scoring decisions against the written rules and changed 22, in both directions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Diligence</div>
+    <h2>Every check run on the company</h2>
+    <p class="intro">AI agents that do the work of a commercial bank's credit department: underwriting, loan servicing and portfolio risk. Each check is labelled by where it was verified: an investor, the press, a public dataset, or the company alone.</p>
+
+    <div class="checks">
+      <div class="check"><div class="ic ok">✓</div><div class="card"><div class="src">Investor's own publication: a16z speedrun</div><h3>Backed by a16z, deployed at a large bank</h3><p>August was in a16z speedrun's SR006 cohort. Its profile says it is "deployed at a +$170B bank" with a growing pipeline. The text is supplied by the company, but published by its investor.</p>
+        <table><tr><td>Cohort</td><td>SR006, 26 Jan to 12 Apr 2026</td></tr><tr><td>Standard terms</td><td>$500K for 10% on a SAFE</td></tr><tr><td>Committed next round</td><td>$500K within 18 months</td></tr><tr><td>Founded</td><td>2025, Tel Aviv</td></tr><tr><td>Team</td><td>3 people</td></tr></table></div></div>
+      <div class="check"><div class="ic ok">✓</div><div class="card"><div class="src">Press coverage of the cohort</div><h3>$800K ARR in three months</h3><p>PingWest (17 April 2026) reports $800K ARR in three months; 36Kr (29 April 2026) repeats the bank deployment. Both restate the company. Whether the figure is billed recurring revenue or an annualised pilot is the first thing to confirm.</p></div></div>
+      <div class="check"><div class="ic i">+</div><div class="card"><div class="src">Founder profiles</div><h3>Two ex-8200 builders</h3><p>Bar Ittah, CEO: founding team at Xperiti (acquired by Ipsos) on fraud-prevention infrastructure; first employee at OnFire AI. Tom Tankilevitch, CTO: built an intelligence unit's AI backbone; tech lead at Iguazio (acquired by McKinsey); founding team at Port.</p></div></div>
+      <div class="check"><div class="ic i">$</div><div class="card"><div class="src">Public labour data: BLS, May 2025</div><h3>The budget is people</h3><p>About 64,000 US credit analysts at a median $83,510: roughly $5.4B a year before relationship managers, servicing staff and the offshore firms banks already pay. The occupation is projected to shrink 4% by 2034.</p></div></div>
+      <div class="check"><div class="ic w">!</div><div class="card"><div class="src">Company claims only</div><h3>The customer is unnamed</h3><p>No source names the bank, and the revenue figure appears in one article restating the company. Most or all revenue likely comes from that one bank.</p></div></div>
+      <div class="check"><div class="ic w">!</div><div class="card"><div class="src">Competition</div><h3>nCino is already shipping agents</h3><p>The leading commercial lending system launched Analyst Digital Partner in April 2026 and says it cuts review effort by 60% to 70%. EnFi raised $15M in February 2026 for credit-analyst agents. Large banks are building their own.</p></div></div>
+      <div class="check"><div class="ic w">!</div><div class="card"><div class="src">Team and regulation</div><h3>No banking founder, and model risk rules</h3><p>Neither founder has held a credit or regulatory role. US banks must validate any model that drives credit decisions, which lengthens sales and demands a decision trail. The fix is a credit hire, not a pivot.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="decision">
+      <div><div class="k">Decision</div><div class="big">$500,000<br>at seed</div><p style="margin-top:14px">After a first meeting, and only if three things check out: who the bank is and what it pays, what the reported $800K actually is, and how the product passes a bank's model risk review.</p></div>
+      <blockquote>"Software helps a credit analyst. August claims to do the analyst's work."<small>That is what puts it against a labour budget rather than a software budget. Its own line is "banking's last piece of software": the system of action above the loan origination system, not one more screen inside it.</small></blockquote>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--ice)">
+  <div class="wrap">
+    <div class="kicker">The document</div>
+    <h2>The memo itself</h2>
+    <p class="intro">Four pages. Click a page to open it.</p>
+    <div class="pages">
+      <a href="memo.pdf#page=1" target="_blank"><img src="img/p-1.jpg" alt="Investment memo, page 1"></a>
+      <a href="memo.pdf#page=4" target="_blank"><img src="img/p-4.jpg" alt="Investment memo, outcomes and conclusion"></a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="kicker">Method</div>
+    <h2>How the numbers were built</h2>
+    <p class="intro">The two calculations the memo rests on, so anyone can rerun them.</p>
+    <div class="limits">
+      <div class="lim"><h3>Pricing the outcome</h3><p>No price is published, so the table is anchored on the one reported deployment: about $800K a year for a large bank. $500,000 at an assumed $20M post-money price is 2.5% at entry and 1.25% at exit after 50% dilution. Exits at 4x to 8x ARR. Weighting the four scenarios by their probabilities gives an expected return of about 2.7x.</p></div>
+      <div class="lim"><h3>Sizing the labour budget</h3><p>64,390 US credit analysts (BLS, May 2025) multiplied by the median wage of $83,510 gives about $5.4B a year. It leaves out relationship managers, servicing and risk staff, and outsourcing, so it is a floor, not a forecast.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Limits</div>
+    <h2>What this cannot do</h2>
+    <p class="intro">It is a filter for which conversations are worth having, not a substitute for having them.</p>
+    <div class="limits">
+      <div class="lim"><h3>Public sources only</h3><p>No data room, no founder meeting, no customer calls. The bank and the revenue are company claims until one call confirms them.</p></div>
+      <div class="lim"><h3>A frozen map of the market</h3><p>Startup Nation Central took Finder offline on 1 September 2026. Its snapshot added 63 companies, but anything founded or funded since then is missing, and most founding years rest on aggregators.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="end"><div class="wrap"><h2 style="margin:0 0 18px">Read the full memo</h2><div class="links" style="justify-content:center"><a class="btn solid" href="memo.pdf" target="_blank">Open PDF</a><a class="btn line" href="memo.pdf" download>Download</a></div></div></div>
+
+<footer>Tal Rosenberg · Law and Business, Reichman University · <a href="mailto:talros11@gmail.com">talros11@gmail.com</a> · <a href="https://talros11.github.io/ai-industry-monitor/">AI Industry Monitor</a></footer>
+
+<script>
+const layers=[
+ {n:146,w:[100,78],fill:"#D6E9FB",ink:"#0E2A4A",what:"companies found",step:"Source",h:"Fund portfolios, accelerators, competitions, trade press and Finder",p:"Including the last snapshot of Startup Nation Finder, the main database of Israeli tech, taken on 1 September 2026. It added 63 companies to the pool.",why:"No single list covers Israeli fintech at seed. The pool had to be assembled.",dots:60},
+ {n:86,w:[78,58],fill:"#B4D6F6",ink:"#0E2A4A",what:"in scope",step:"Filter",h:"Israeli founder, founded 2023 or later, about $5M or less raised",p:"Fintech, or borderline when the main customers are financial firms or the product serves a financial decision. Larger companies were kept apart as a reference set.",dots:40},
+ {n:54,w:[58,38],fill:"#86BBEC",ink:"#0E2A4A",what:"passed the gates",step:"Stage 1 · Gates",h:"Product in use, a buyer, not a thin layer, a legal route",p:"Seven companies were out of scope on closer reading, and 25 failed a gate. Twenty-four of all screened companies claimed no buyer at all.",why:"A gate removes a company only in a clear case. Degrees are left to the scored criteria.",dots:30},
+ {n:5,w:[38,20],fill:"#2F6FB5",ink:"#fff",what:"worth a look",step:"Stage 2 · Scoring and judgment",h:"Seven weighted criteria, then a read of all 54",p:"Sells the work, embedded distribution, regulated position, automation economics, founders from the domain, compounding data, and exposure to incumbents. Then a judgment on thesis and fund fit.",ex:["<b>Set aside.</b> Ranked 2nd: live through a large distributor, but it serves sportsbooks' marketing budgets.","<b>Set aside.</b> Ranked 5th: a live wallet integration, but it draws on a marketing budget in a small market."],dots:16},
+ {n:1,w:[20,9],fill:"#16385F",ink:"#fff",what:"",step:"Stage 3 · Fundamentals",h:"Full diligence on one company",p:"Bottom-up labour budget, why now, capital to the next proof, exit path, fund fit, and whether the incumbent platform could ship this as a feature.",ex:["<b>Held.</b> Ranked 1st: a real insurer customer, but an Israel-only market of about $4M a year.","<b>Held.</b> Ranked 4th: closest to the thesis, but its founding year and Israeli founder are unconfirmed."],dots:1}
+];
+const f=document.getElementById('f');
+const last=layers.length-1;
+function rnd(a,b){return a+Math.random()*(b-a)}
+layers.forEach((L,i)=>{
+  const row=document.createElement('div');row.className='frow';
+  const tl=(100-L.w[0])/2,tr=100-tl,bl=(100-L.w[1])/2,br=100-bl;
+  let dots='';
+  const keep=Math.max(1,Math.round(L.dots*.35));
+  for(let k=0;k<L.dots;k++){
+    const y=rnd(10,90),half=(L.w[0]+(L.w[1]-L.w[0])*y/100)/2;
+    const out=k>=keep&&i<last;
+    if(out){
+      const side=Math.random()<.5?-1:1;
+      const x=50+side*(half+rnd(2,(100-half*2)/2-1));
+      if(x<1||x>99)continue;
+      dots+=`<span class="dot out" style="left:${x}%;top:${y}%"></span>`;
+    }else if(i<last){
+      const x=50+rnd(-half+4,half-4);
+      const near=Math.abs(y-50)<22&&Math.abs(x-50)<16; if(near)continue;
+      dots+=`<span class="dot" style="left:${x}%;top:${y}%;background:${i<3?'#2F6FB5':'#EAF3FC'};opacity:.8"></span>`;
+    }
+  }
+  row.innerHTML=`<div class="slice"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="${tl},0 ${tr},0 ${br},100 ${bl},100" fill="${L.fill}" stroke="#fff" stroke-width=".6" vector-effect="non-scaling-stroke"/></svg><div class="dots">${dots}</div><div class="label" style="color:${L.ink}"><div class="num">${L.n}</div><div class="what">${L.what}</div></div></div>
+  <div class="note"><div class="step">${L.step}</div><h3>${L.h}</h3><p>${L.p}</p>${L.why?`<div class="why">${L.why}</div>`:''}${L.ex?`<div class="ex">${L.ex.map(e=>`<div>${e}</div>`).join('')}</div>`:''}</div>`;
+  f.appendChild(row);
+});
+</script>
+</body>
+</html>
