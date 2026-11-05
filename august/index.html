@@ -231,7 +231,7 @@ const layers=[
  {n:86,w:[78,58],fill:"#B4D6F6",ink:"#0E2A4A",what:"in scope",step:"Filter",h:"Israeli founder, founded 2023 or later, about $5M or less raised",p:"Fintech, or borderline when the main customers are financial firms or the product serves a financial decision. Larger companies were kept apart as a reference set.",dots:40},
  {n:54,w:[58,38],fill:"#86BBEC",ink:"#0E2A4A",what:"passed the gates",step:"Stage 1 · Gates",h:"Product in use, a named customer, more than a model wrapper, a legal way to operate",p:"7 companies were out of scope on closer reading, and 25 failed a gate. The most common reason: 24 of the 86 claimed no customer at all. A company that claimed customers without naming them was held, not removed.",why:"A gate removes a company only in a clear case. Degrees are left to the scored criteria.",dots:30},
  {n:5,w:[38,20],fill:"#2F6FB5",ink:"#fff",what:"worth a look",step:"Stage 2 · Scoring and judgment",h:"7 weighted criteria, then a read of all 54",list:["Sells the work","Embedded distribution","Regulated position","Automation economics","Founders from the domain","Compounding data","Exposure to incumbents"],p:"Then a judgment on thesis and fund fit.",dots:16},
- {n:1,w:[20,9],fill:"#16385F",ink:"#fff",what:"",step:"Stage 3 · Fundamentals",h:"Full diligence on 1 company",p:"Bottom-up labour budget, why now, capital to the next proof, exit path, fund fit, and whether the incumbent platform could ship this as a feature.",ex:["<b>Held.</b> Ranked 1st: a real insurer customer, but an Israel-only market of about $4M a year.","<b>Held.</b> Ranked 4th: closest to the thesis, but its founding year and Israeli founder are unconfirmed."],dots:1}
+ {n:1,w:[20,9],fill:"#16385F",ink:"#fff",what:"",step:"Stage 3 · Fundamentals",h:"Full diligence on 1 company",list:["Bottom-up labour budget","Why now","Capital to the next proof","Exit path","Fund fit","Incumbent feature risk"],p:"",ex:["<b>Held.</b> Ranked 1st: a real insurer customer, but an Israel-only market of about $4M a year."],dots:1}
 ];
 const f=document.getElementById('f');
 const last=layers.length-1;
@@ -256,7 +256,7 @@ layers.forEach((L,i)=>{
     }
   }
   row.innerHTML=`<div class="slice"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="${tl},0 ${tr},0 ${br},100 ${bl},100" fill="${L.fill}" stroke="#fff" stroke-width=".6" vector-effect="non-scaling-stroke"/></svg><div class="dots">${dots}</div><div class="label" style="color:${L.ink}"><div class="num">${L.n}</div><div class="what">${L.what}</div></div></div>
-  <div class="note"><div class="step">${L.step}</div><h3>${L.h}</h3>${L.list?`<ol class="crit">${L.list.map((x,j)=>`<li><span>${j+1}</span>${x}</li>`).join('')}</ol>`:''}<p>${L.p}</p>${L.why?`<div class="why">${L.why}</div>`:''}${L.ex?`<div class="ex">${L.ex.map(e=>`<div>${e}</div>`).join('')}</div>`:''}</div>`;
+  <div class="note"><div class="step">${L.step}</div><h3>${L.h}</h3>${L.list?`<ol class="crit">${L.list.map((x,j)=>`<li><span>${j+1}</span>${x}</li>`).join('')}</ol>`:''}${L.p?`<p>${L.p}</p>`:''}${L.why?`<div class="why">${L.why}</div>`:''}${L.ex?`<div class="ex">${L.ex.map(e=>`<div>${e}</div>`).join('')}</div>`:''}</div>`;
   f.appendChild(row);
 });
 </script>
